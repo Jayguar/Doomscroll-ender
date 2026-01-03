@@ -1,12 +1,13 @@
 {
     "name": "Doomscroll ender",
     "description": "Ends doom scrolling",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 3,
     "background":{
         "service_worker": "background.js"
     },
     "host_permissions": [
-       "https://www.youtube.com/*" 
+       "https://www.youtube.com/*",
+       "https://www.instagram.com/*" 
     ]
 }
