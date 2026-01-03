@@ -1,6 +1,8 @@
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (tab.url && tab.url.includes("youtube.com/shorts")) {
-    chrome.tabs.remove(tabId);
-    chrome.tabs.create({url: "https://www.youtube.com/"});
+  if (changeInfo.status === "complete" && tab.url && tab.url.includes("youtube.com/shorts")) {
+    chrome.tabs.update(tabId, {url: "https://www.youtube.com/"});
+  }
+  if (changeInfo.status === "complete" && tab.url && tab.url.includes("instagram.com/reels")) {
+    chrome.tabs.update(tabId, {url: "https://www.instagram.com/"});
   }
 });
